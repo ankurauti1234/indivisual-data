@@ -1,0 +1,59 @@
+{
+  "user": {
+    "name": "shadcn",
+    "email": "m@example.com",
+    "avatar": "/avatars/shadcn.jpg"
+  },
+  "teams": [
+    {
+      "name": "Individual",
+      "logo": "Users",
+      "plan": "Free"
+    }
+  ],
+  "navMain": [
+    {
+      "title": "Television",
+      "url": "#",
+      "icon": "Tv",
+      "active": true,
+      "items": [
+        { "title": "Broadcasters", "url": "/tv/broadcasters", "active": false },
+        { "title": "Advertisers", "url": "/tv/advertisers", "active": false },
+        { "title": "Brands", "url": "/tv/brands", "active": false }
+      ]
+    },
+    {
+      "title": "Radio",
+      "url": "#",
+      "icon": "Radio",
+      "active": true,
+      "items": [
+        { "title": "Broadcasters", "url": "/radio/broadcasters", "active": true },
+        { "title": "Advertisers", "url": "/radio/advertisers", "active": false },
+        { "title": "Brands", "url": "/radio/brands", "active": false }
+      ]
+    },
+    {
+      "title": "Digital",
+      "url": "#",
+      "icon": "Globe",
+      "active": true,
+      "items": [
+        { "title": "OTT", "url": "#", "active": false },
+        { "title": "YouTube", "url": "#", "active": false },
+        { "title": "Games", "url": "#", "active": false }
+      ]
+    },
+    {
+      "title": "Sports",
+      "url": "#",
+      "icon": "Trophy",
+      "active": true,
+      "items": [
+        { "title": "NSP", "url": "#", "active": false },
+        { "title": "IPL", "url": "#", "active": false }
+      ]
+    }
+  ]
+}
