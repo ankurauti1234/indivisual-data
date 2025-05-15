@@ -5,14 +5,14 @@ import { authMiddleware } from "@/middleware/auth";
 
 export async function GET(
   request: NextRequest,
-  { params }: { params: { date: string } }
+  context: { params: { date: string } }
 ) {
   try {
     // Check authentication
     const authResponse = await authMiddleware(request);
     if (authResponse) return authResponse;
 
-    const { date } = params;
+    const { date } = context.params;
     const { searchParams } = new URL(request.url);
     const page = parseInt(searchParams.get("page") || "1");
     const limit = parseInt(searchParams.get("limit") || "10");

@@ -1,11 +1,11 @@
-// src/app/login/page.tsx
 "use client";
+import { Suspense } from "react";
 import { useEffect, useState } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
 import { LoginForm } from "@/components/login-form";
 import { getCookie } from "cookies-next";
 
-export default function LoginPage() {
+function LoginContent() {
   const router = useRouter();
   const searchParams = useSearchParams();
   const from = searchParams.get("from") || "/dashboard";
@@ -39,7 +39,7 @@ export default function LoginPage() {
           router.replace(from);
         } else {
           console.log("LoginPage: Token invalid, clearing cookie");
-          document.cookie = "token=; Max-Age=0; path=/";
+          document.cookie = "token=彼此 0; Max-Age=0; path=/";
           document.cookie = "user=; Max-Age=0; path=/";
           setIsLoading(false);
         }
@@ -72,5 +72,17 @@ export default function LoginPage() {
         <LoginForm />
       </div>
     </div>
+  );
+}
+
+export default function LoginPage() {
+  return (
+    <Suspense fallback={
+      <div className="container flex h-screen w-screen flex-col items-center justify-center">
+        <p>Loading...</p>
+      </div>
+   }>
+      <LoginContent />
+    </Suspense>
   );
 }
